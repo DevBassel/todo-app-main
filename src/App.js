@@ -1,6 +1,5 @@
 import Container from "./components/Container";
 import HeaderImg from "./components/HeaderImg";
-import Test from "./components/Test";
 import StoreProvider from "./context/Store";
 
 function App() {
