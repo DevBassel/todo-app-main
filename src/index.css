@@ -19,7 +19,6 @@
 
 body {
   background-color: var(--bg);
-  height: 100vh !important;
 }
 
 ::-webkit-scrollbar {
@@ -35,7 +34,7 @@ body {
   background-size: cover;
 }
 .App .container {
-  margin: -240px 427px;
+  margin: -240px auto;
   padding: 18px 23px;
   width: 586px;
 }
