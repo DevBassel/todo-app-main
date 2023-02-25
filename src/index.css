@@ -6,65 +6,74 @@
 }
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
+:root {
+  --bg: hsl(235, 21%, 11%);
+  --container: hsl(235, 24%, 19%);
+  --text: hsl(234, 39%, 85%);
+  --done-text: hsl(233, 14%, 35%);
+  --text: hsl(234, 11%, 52%);
+  --bg-img: url(./assets/bg-desktop-dark.jpg);
+}
 body {
-  background-color: hsl(235, 21%, 11%);
+  background-color: var(--bg);
   height: 100vh;
 }
 
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 0;
   height: 0;
   border-radius: 6px;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 6px;
-  height: 10px;
-  width: 5px;
-  background: hsl(220, 98%, 61%);
 }
 
 .bg-img {
   width: 100%;
-  height: 37.5vh;
+  background-image: var(--bg-img);
+  height: 44.8vh;
+  background-size: cover;
 }
 .App .container {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 53%;
   transform: translate(-50%, -50%);
-  width: 41%;
-  height: 87%;
+  width: 43%;
+  height: 82%;
   padding: 18px 23px;
 }
 .App h1 {
   color: #fff;
   text-align: left;
-  letter-spacing: 13px;
+  letter-spacing: 15px;
   font-size: 2.47em;
+  position: relative;
+}
+.App h1 img {
+  position: absolute;
+  right: 0;
+  top: 3px;
+  width: 25px;
+  height: 25px;
 }
 .form {
-  margin-top: 30px;
-  padding: 11px 23px;
+  margin-top: 39px;
+  padding: 17px 23px;
   font-size: 18px;
-  background: hsl(235, 24%, 19%);
-  color: hsl(234, 39%, 85%);
+  background: var(--container);
+  color: var(--text);
   display: flex;
   align-items: center;
   border-radius: 6px;
 }
-.form label {
-  margin-left: 21px;
-  font-size: 17px;
-}
+
 .form input {
   background: transparent;
   border: none;
-  margin-left: 5px;
+  margin-left: 15px;
   padding: 7px;
   width: 50%;
   caret-color: hsl(220, 98%, 61%);
-  font-size: 16px;
-  color: hsl(234, 39%, 85%);
+  font-size: 18px;
+  color: var(--text);
 }
 .form input:focus {
   outline: none;
@@ -73,7 +82,7 @@ body {
 .todos .status {
   border: 1px solid hsl(234, 39%, 85%);
   border-radius: 50%;
-  padding: 10px;
+  padding: 11px;
   cursor: pointer;
 }
 
@@ -98,33 +107,32 @@ body {
 }
 .todos .status.done ~ p {
   text-decoration: line-through;
-  color: hsl(233, 14%, 35%);
+  color: var(--done-text);
 }
 .content {
   margin-top: 23px;
-  background: hsl(235, 24%, 19%);
-  border-radius: 10px;
+  background: var(--container);
+  border-radius: 3px;
 }
 
 .todos {
   list-style: none;
   overflow: auto;
-  height: 50vh;
+  height: 58.8vh;
 }
 
 .todos .todo {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 23px;
+  padding: 18px 23px;
   margin-bottom: 4px;
   border-bottom: 1px solid hsl(234, 11%, 52%);
-
   position: relative;
 }
 .todos .todo p {
   font-size: 18px;
-  color: hsl(234, 39%, 85%);
+  color: var(--text);
   margin-left: 24px;
   width: 100%;
 }
@@ -148,18 +156,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 12px;
-  font-size: 13px;
-  color: hsl(234, 39%, 85%);
+  padding: 15px 22px;
+  font-size: 14px;
+  color: var(--text);
   position: relative;
 }
 .control span {
   cursor: pointer;
 }
 .control .filter {
-  width: 35%;
+  width: 168px;
   display: flex;
   justify-content: space-between;
+  margin-left: 41px;
+  font-size: 15px;
 }
 .control .filter span.active {
   color: hsl(220, 98%, 61%);
@@ -180,7 +190,7 @@ body {
     bottom: -100%;
     transform: translateY(100%);
     width: 100% !important;
-    background: hsl(235, 24%, 19%);
+    background: var(--container);
     left: 0;
     border-radius: 6px;
     padding: 15px 65px;

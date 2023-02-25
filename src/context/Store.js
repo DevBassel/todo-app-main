@@ -9,7 +9,7 @@ export default function StoreProvider(props) {
       items = JSON.parse(items);
       console.log(items);
     } else {
-      items = { All: [], Archive: [], Complete: [] };
+      items = { All: [], Active: [], Completed: [] };
     }
     return items;
   });
@@ -20,21 +20,21 @@ export default function StoreProvider(props) {
       setTodos({
         ...todos,
         All: [...todos.All, ...item],
-        Archive: [...todos.Archive, ...item],
+        Active: [...todos.Active, ...item],
       });
     },
     clear() {
       setTodos({
         All: todos.All.filter((t) => t.state === false),
-        Archive: todos.Archive,
-        Complete: [],
+        Active: todos.Active,
+        Completed: [],
       });
     },
     remove(item) {
       setTodos({
         All: todos.All.filter((i) => i.id !== item.id),
-        Archive: todos.Archive,
-        Complete: todos.Complete,
+        Active: todos.Active,
+        Completed: todos.Completed,
       });
     },
     update(item) {
@@ -49,8 +49,8 @@ export default function StoreProvider(props) {
 
       setTodos({
         All: al,
-        Complete: al.filter((el) => el.state === true),
-        Archive: al.filter((el) => el.state === false),
+        Completed: al.filter((el) => el.state === true),
+        Active: al.filter((el) => el.state === false),
       });
     },
   };
