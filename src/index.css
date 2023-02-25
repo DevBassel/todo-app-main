@@ -7,16 +7,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
 :root {
-  --bg: hsl(235, 21%, 11%);
-  --container: hsl(235, 24%, 19%);
-  --text: hsl(234, 39%, 85%);
-  --done-text: hsl(233, 14%, 35%);
-  --text: hsl(234, 11%, 52%);
-  --bg-img-disk: url(./assets/bg-desktop-dark.jpg);
-  --bg-img-mob: url(./assets/bg-mobile-dark.jpg);
+  --bg:"";
+  --container: "";
+  --text:"";
+  --done-text:"";
+  --text: "";
+  --bg-img-disk: "";
 
+  --bg-img-mob: "";
 }
-
 
 body {
   background-color: var(--bg);
@@ -177,9 +176,8 @@ body {
   /* body {
     margin-bottom: 22px;
   } */
-  .bg-img{
+  .bg-img {
     background-image: var(--bg-img-mob) !important;
-
   }
   .container {
     width: 100% !important;

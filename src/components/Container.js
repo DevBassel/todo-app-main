@@ -5,6 +5,7 @@ import sun from "../assets/icon-sun.svg";
 import moon from "../assets/icon-moon.svg";
 import darkImg from "../assets/bg-desktop-dark.jpg";
 import lightImg from "../assets/bg-desktop-light.jpg";
+
 import mobLight from "../assets/bg-mobile-light.jpg";
 import mobDark from "../assets/bg-mobile-dark.jpg";
 
@@ -18,6 +19,30 @@ export default function Container() {
   useEffect(() => {
     inputVal.current.focus();
   }, []);
+
+  let ROOT = (name, val) =>
+    document.documentElement.style.setProperty(name, val);
+  if (theme) {
+    // LIGHT
+    ROOT("--bg", "hsl(0, 0%, 98%)");
+    ROOT("--container", "hsl(236, 33%, 92%)");
+    ROOT("--text", "hsl(235, 19%, 35%)");
+    ROOT("--done-text", `hsl(233, 14%, 35%)`);
+    ROOT("--bg-img-disk", `url(${lightImg})`);
+    ROOT("--bg-img-mob", `url(${mobLight})`);
+
+    console.log("lighr", theme);
+  } else {
+    // DARK
+    ROOT("--bg", "hsl(235, 21%, 11%)");
+    ROOT("--bg-img-mob", `url(${mobDark})`);
+    ROOT("--bg-img-disk", `url(${darkImg})`);
+    ROOT("--container", "hsl(235, 24%, 19%)");
+    ROOT("--done-text", `hsl(233, 14%, 35%)`);
+    ROOT("--text", "hsl(234, 11%, 52%)");
+    console.log("dark", theme);
+  }
+
   const taps = [
     {
       id: 1,
@@ -48,32 +73,7 @@ export default function Container() {
     inputVal.current.value = "";
     window.localStorage.todos = JSON.stringify(store.todos);
   }
-  let ROOT = (name, val) =>
-    document.documentElement.style.setProperty(name, val);
-  if (theme) {
-    // LIGHT
-    ROOT("--bg", "hsl(0, 0%, 98%)");
-    ROOT("--container", "hsl(236, 33%, 92%)");
-    ROOT("--text", "hsl(233, 11%, 84%)");
-    ROOT("--bg-img-disk", `url(${lightImg})`);
-    
-    ROOT("--bg-img-mob", `url(${mobLight})`);
 
-    ROOT("--text", "hsl(235, 19%, 35%)");
-
-    console.log("lighr", theme);
-  } else {
-    // DARK
-    ROOT("--bg-img", `url(${darkImg})`);
-
-    ROOT("--bg", "hsl(235, 21%, 11%)");
-    ROOT("--container", "hsl(235, 24%, 19%)");
-    ROOT("--text", "hsl(234, 11%, 52%)");
-    ROOT("--bg-img-disk", `url(${mobDark})`);
-    ROOT("--bg-img-mob", `url(${darkImg})`);
-
-    console.log("dark", theme);
-  }
   // console.log(filter);
   return (
     <div className="container">
